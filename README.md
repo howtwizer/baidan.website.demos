@@ -1,5 +1,5 @@
-# rails-search-demo
-Demo application for gather different search and suggestion techniques implemented in different existing projects.
+# art search
+Ruby on Rails + StimulusReflex (PostgreSQL)Demo application for gather different search and suggestion techniques implemented in different existing projects.
 
 This demo using free artworks database as seed source. 
 Database source: 
