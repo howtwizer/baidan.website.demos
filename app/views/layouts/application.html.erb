@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Art Search</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+<main role="main" class="container-fluid main">
+  <div class="row">
+    <div class="col-12">
+      <%= yield %>
+    </div>
+  </div>
+</main>
+<%= render "/globals/footer" %>
+</body>
+</html>
