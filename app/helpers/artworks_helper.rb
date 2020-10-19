@@ -26,4 +26,9 @@ module ArtworksHelper
   def next_page
     @pagy.next || @pagy.last
   end
+
+  def thumbnail(thumbnail_url, options={})
+    url = thumbnail_url || "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+    "<img class='img-thumbnail mr-4' src='#{url}' alt='#{options[:alt]}'>".html_safe
+  end
 end

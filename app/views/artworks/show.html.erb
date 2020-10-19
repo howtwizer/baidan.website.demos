@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back', artworks_path %>
+<h1><%= @artwork.title %></h1>
+<%= thumbnail(@artwork.thumbnail_url) %>
+
+<p><strong>Date </strong>:  <%= @artwork.date %> </p>
+<p><strong>Medium </strong>:  <%= @artwork.medium %> </p>
+<p><strong>Dimensions </strong>:  <%= @artwork.dimensions %> </p>
+<p><strong>Credit_line </strong>:  <%= @artwork.credit_line %> </p>
+<p><strong>Accession_number </strong>:  <%= @artwork.accession_number %> </p>
+<p><strong>Date_acquired </strong>:  <%= @artwork.date_acquired %> </p>
+<p><strong>Cataloged </strong>:  <%= @artwork.cataloged %> </p>
+<p><strong>Url </strong>: <a href="<%= @artwork.url %>" target="_blank"><%= @artwork.url %></a> </p>
+<p><strong>Thumbnail_url </strong>:  <%= @artwork.thumbnail_url %> </p>
+<p><strong>Circumference </strong>:  <%= @artwork.circumference %> </p>
+<p><strong>Depth </strong>:  <%= @artwork.depth %> </p>
+<p><strong>Diameter </strong>:  <%= @artwork.diameter %> </p>
+<p><strong>Height </strong>:  <%= @artwork.height %> </p>
+<p><strong>Length </strong>:  <%= @artwork.length %> </p>
+<p><strong>Weight </strong>:  <%= @artwork.weight %> </p>
+<p><strong>Width </strong>:  <%= @artwork.width %> </p>
+<p><strong>Seat_height </strong>:  <%= @artwork.seat_height %> </p>
+<p><strong>Duration </strong>:  <%= @artwork.duration %> </p>
+
+<%= link_to 'Back', artworks_path %>
