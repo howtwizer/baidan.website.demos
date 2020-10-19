@@ -1,4 +1,4 @@
-<%= render "explanation" do %>
+<%= render "/globals/explanation" do %>
   <p>
     Reason of this demo - demonstrations or realtime searching based on PostgreSQL sophsticated ranked search with partitions.
   </p>
@@ -37,7 +37,7 @@
     <div class="col-6">
 
       <input type="text" placeholder="Search..." class="form-control form-control-lg" value="<%= @query %>"
-             data-reflex="input->TabularReflex#search" data-reflex-root="#search-example">
+             data-reflex="input->ArtworkReflex#search" data-reflex-root="#search-example">
 
       <% if @suggests.present? && @query.present? %>
         <div class="dropdown show" id="matches">
@@ -47,7 +47,7 @@
               <h6 class="dropdown-header"><%= type %></h6>
               <div class="dropdown-divider"></div>
               <% results.each do |match| %>
-                <a class="dropdown-item" href="#" data-reflex="click->TabularReflex#search"
+                <a class="dropdown-item" href="#" data-reflex="click->ArtworkReflex#search"
                    data-suggest-value="<%= match.title %>"
                    data-searchable-id="<%= match.searchable_id %>"
                    data-searchable-type="<%= match.searchable_type %>"> <%= match.title %></a>
@@ -67,27 +67,27 @@
         <tr>
           <th style="width:15%">
             <%= link_to "Accession number #{arrow :accession_number}", "#", class: column_css(:accession_number),
-                        data: {reflex: "click->TabularReflex#order", column_name: :accession_number, direction: direction} %>
+                        data: {reflex: "click->ArtworkReflex#order", column_name: :accession_number, direction: direction} %>
           </th>
           <th style="width:20%">
             <%= link_to "Title #{arrow :title}", "#", class: column_css(:title),
-                        data: {reflex: "click->TabularReflex#order", column_name: :title, direction: direction} %>
+                        data: {reflex: "click->ArtworkReflex#order", column_name: :title, direction: direction} %>
           </th>
           <th style="width:5%">
             <%= link_to "Date #{arrow :date}", "#", class: column_css(:date),
-                        data: {reflex: "click->TabularReflex#order", column_name: :date, direction: direction} %>
+                        data: {reflex: "click->ArtworkReflex#order", column_name: :date, direction: direction} %>
           </th>
           <th style="width:20%">
             <%= link_to "Artist #{arrow :artist}", "#", class: column_css(:artist),
-                        data: {reflex: "click->TabularReflex#order", column_name: :artist, direction: direction} %>
+                        data: {reflex: "click->ArtworkReflex#order", column_name: :artist, direction: direction} %>
           </th>
           <th style="width:20%">
             <%= link_to "Classification #{arrow :classification}", "#", class: column_css(:classification),
-                        data: {reflex: "click->TabularReflex#order", column_name: :classification, direction: direction} %>
+                        data: {reflex: "click->ArtworkReflex#order", column_name: :classification, direction: direction} %>
           </th>
           <th style="width:20%">
             <%= link_to "Department #{arrow :department}", "#", class: column_css(:department),
-                        data: {reflex: "click->TabularReflex#order", column_name: :department, direction: direction} %>
+                        data: {reflex: "click->ArtworkReflex#order", column_name: :department, direction: direction} %>
           </th>
         </tr>
         </thead>
@@ -106,11 +106,11 @@
         </tbody>
       </table>
 
-      <%= render "paginator" if @pagy.pages > 1 %>
+      <%= render "/globals/paginator" if @pagy.pages > 1 %>
     <% end %>
   </div>
 </div>
-<%= render "explanation" do %>
+<%= render "/globals/explanation" do %>
   <p>
     <a href="https://https://expo.stimulusreflex.com/demos/tabular">Based</a> on sophsticated management of tabular data using
     <a href="https://docs.stimulusreflex.com/quickstart#look-mom-no-javascript">declarative StimulusReflex

@@ -1,4 +1,4 @@
-module TabularsHelper
+module ArtworksHelper
   include Pagy::Frontend
 
   def column_css(column_name)

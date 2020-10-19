@@ -1,4 +1,4 @@
-class TabularReflex < ApplicationReflex
+class ArtworkReflex < ApplicationReflex
   def search
     session[:query] = element[:value]&.strip
     session[:suggests] = PgSearchDocument.preload(:searchable).rank_filter(session[:query])

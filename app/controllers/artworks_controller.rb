@@ -1,6 +1,6 @@
-class TabularsController < ApplicationController
-  def show
+class ArtworksController < ApplicationController
 
+  def index
     @suggests = session[:suggests] || []
     @searchable_id = session[:searchable_id]
     @searchable_type = session[:searchable_type]
@@ -21,6 +21,10 @@ class TabularsController < ApplicationController
     @page = (session[:page] || 1).to_i
     @page = page_count if @page > page_count
     @pagy, @artworks = pagy(artworks, page: @page)
+  end
+
+  def show
+
   end
 
   private
