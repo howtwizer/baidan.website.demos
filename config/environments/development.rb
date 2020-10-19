@@ -3,7 +3,8 @@ Rails.application.configure do
 
   config.session_store :cache_store
 
-  config.hosts << "art-search-l6jb9.ondigitalocean.app"
+  config.hosts << "www.baidan.website"
+  config.hosts << "baidan.website"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
