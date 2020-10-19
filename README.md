@@ -1,4 +1,13 @@
 # art search
+
+## Interesting tech features in this project.
+- PostgreSQL tsvector live search
+- PostgreSQL triggers
+- Multi models top ranked suggestor
+- CSV parsing 
+- StimulusReflex on websockets
+- No custom Java Script
+
 Ruby on Rails + StimulusReflex (PostgreSQL)Demo application for gather different search and suggestion techniques implemented in different existing projects.
 
 This demo using free artworks database as seed source. 
@@ -34,4 +43,4 @@ rails db:seed
 ```
 
 seeds.rb will download, unzip and parse CSV filling the database. 
-Notice that
+
