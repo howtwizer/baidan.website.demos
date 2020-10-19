@@ -2,8 +2,9 @@ do /Users/oleksiibaidan/Projects/art_search/bin/bundle exec /Users/oleksiibaidan
 Ruby enVironment Manager 1.29.10 (latest) (c) 2009-2017 Michal Papis, Piotr Kuczynski, Wayne E. Seguin
 
                                Prefix Verb   URI Pattern                                                                              Controller#Action
-                         search_index GET    /search(.:format)                                                                        search#index
-                              tabular GET    /tabular/:id(.:format)                                                                   tabular#show
+                                 root GET    /                                                                                        home#show
+                             artworks GET    /artworks(.:format)                                                                      artworks#index
+                              artwork GET    /artworks/:id(.:format)                                                                  artworks#show
         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
         rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                  action_mailbox/ingresses/sendgrid/inbound_emails#create
