@@ -12,12 +12,13 @@ services:
       - db:db
       - redis:redis
     ports:
-      - "3000:3000"
+      - "3000:8080"
     volumes:
       - .:/app
       - gem_cache:/usr/local/bundle/gems
       - node_modules:/app/node_modules
     env_file: .env
+    restart: always
     environment:
       RAILS_ENV: development
     networks:
@@ -25,6 +26,7 @@ services:
 
   db:
     image: postgres:13-alpine
+    restart: always
     environment:
       POSTGRES_DB: "db"
       POSTGRES_HOST_AUTH_METHOD: "trust"
@@ -36,6 +38,7 @@ services:
 
   redis:
     image: redis:6.0.8
+    restart: always
     networks:
       art_serch_network:
 volumes:
