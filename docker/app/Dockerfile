@@ -35,16 +35,18 @@ RUN mkdir -p $RAILS_ROOT
 # Set working directory
 WORKDIR $RAILS_ROOT
 
-COPY ../../Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
 
 RUN bundle config build.nokogiri --use-system-libraries
 
 RUN bundle check || bundle install
 
-COPY ../../package.json yarn.lock ./
+COPY package.json package.json
+COPY yarn.lock yarn.lock
 
 RUN yarn install --check-files
 
-COPY ../.. ./
+COPY . .
 
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
