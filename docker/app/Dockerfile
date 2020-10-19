@@ -30,18 +30,21 @@ RUN apk add --update --no-cache \
 
 RUN gem install bundler -v 2.1.4
 
-WORKDIR /app
+ENV RAILS_ROOT /var/www/art-search
+RUN mkdir -p $RAILS_ROOT
+# Set working directory
+WORKDIR $RAILS_ROOT
 
-COPY Gemfile Gemfile.lock ./
+COPY ../../Gemfile Gemfile.lock ./
 
 RUN bundle config build.nokogiri --use-system-libraries
 
 RUN bundle check || bundle install
 
-COPY package.json yarn.lock ./
+COPY ../../package.json yarn.lock ./
 
 RUN yarn install --check-files
 
-COPY . ./
+COPY ../.. ./
 
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]

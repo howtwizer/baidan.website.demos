@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./docker/app/Dockerfile
     depends_on:
       - db
       - redis
@@ -12,7 +12,7 @@ services:
       - db:db
       - redis:redis
     ports:
-      - "3000:8080"
+      - "3000:3000"
     volumes:
       - .:/app
       - gem_cache:/usr/local/bundle/gems
@@ -23,7 +23,16 @@ services:
       RAILS_ENV: development
     networks:
       art_serch_network:
-
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    depends_on:
+      - app
+    ports:
+      - 80:80
+    networks:
+      art_serch_network:
   db:
     image: postgres:13-alpine
     restart: always
