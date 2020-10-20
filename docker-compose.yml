@@ -23,12 +23,8 @@ services:
       RAILS_ENV: development
     networks:
       art_serch_network:
-  web:
-    build:
-      context: .
-      dockerfile: ./docker/web/Dockerfile
-    depends_on:
-      - app
+  nginx:
+    image: nginx:1.15-alpine
     ports:
       - 80:80
       - 443:443
