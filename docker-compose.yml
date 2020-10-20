@@ -28,6 +28,8 @@ services:
     ports:
       - 80:80
       - 443:443
+    depends_on:
+      - app
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d
       - ./docker/certbot/conf:/etc/letsencrypt
