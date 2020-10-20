@@ -31,6 +31,18 @@ services:
       - app
     ports:
       - 80:80
+      - 443:443
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./docker/certbot/conf:/etc/letsencrypt
+      - ./docker/certbot/www:/var/www/certbot
+    networks:
+      art_serch_network:
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./docker/certbot/conf:/etc/letsencrypt
+      - ./docker/certbot/www:/var/www/certbot
     networks:
       art_serch_network:
   db:
