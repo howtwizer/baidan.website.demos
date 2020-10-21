@@ -40,7 +40,7 @@ COPY Gemfile.lock Gemfile.lock
 
 RUN bundle config build.nokogiri --use-system-libraries
 
-RUN bundle check || bundle install
+RUN bundle check || bundle install --without test
 
 COPY package.json package.json
 COPY yarn.lock yarn.lock
@@ -48,5 +48,5 @@ COPY yarn.lock yarn.lock
 RUN yarn install --check-files
 
 COPY . .
-
+RUN bundle exec rails webpacker:compile RAILS_ENV=production
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]

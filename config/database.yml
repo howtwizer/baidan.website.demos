@@ -84,6 +84,3 @@ test:
 #
 production:
   <<: *default
-  database: art_search_production
-  username: art_search
-  password: <%= ENV['ART_SEARCH_DATABASE_PASSWORD'] %>
