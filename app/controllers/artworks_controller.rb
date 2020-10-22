@@ -1,6 +1,7 @@
 class ArtworksController < ApplicationController
 
   def index
+    @query = session[:query]
     @suggests = session[:suggests] || []
     @searchable_id = session[:searchable_id]
     @searchable_type = session[:searchable_type]
@@ -11,9 +12,8 @@ class ArtworksController < ApplicationController
     if @searchable_id.present? && @searchable_type.present? && %w[Artwork Artist Classification Department].include?(@searchable_type)
       @query = "[#{@searchable_type}] #{session[:suggest_value]}"
       artworks = artworks.send(@searchable_type.downcase, @searchable_id)
-    elsif session[:query].present?
-      @query = session[:query]
-      artworks = artworks.pg_suggest(@query)
+    else
+      artworks = @query.present? ? artworks.pg_suggest(@query) : artworks.all
     end
     page_count = (artworks.count / Pagy::VARS[:items].to_f).ceil
     page_count = 1 if page_count.zero?
