@@ -8,6 +8,8 @@ services:
     depends_on:
       - db
       - redis
+      - nginx
+      - certbot
     links:
       - db:db
       - redis:redis
