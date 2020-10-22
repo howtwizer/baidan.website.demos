@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.session_store :cache_store
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -45,8 +45,8 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   config.action_cable.mount_path = "/cable"
-  config.action_cable.url = 'wss://baidan.website/cable'
-  config.action_cable.allowed_request_origins = [ 'http://baidan.website', 'https://baidan.website', 'http://www.baidan.website', 'https://www.baidan.website' ]
+  config.action_cable.url = 'ws://localhost:3000/cable'
+  # config.action_cable.allowed_request_origins = [ 'http://baidan.website', 'https://baidan.website', 'http://www.baidan.website', 'https://www.baidan.website' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
