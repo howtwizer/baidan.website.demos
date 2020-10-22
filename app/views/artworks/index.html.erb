@@ -1,39 +1,6 @@
 <%= render "/globals/explanation" do %>
-  <p>
-    Reason of this demo - demonstrations or realtime searching based on PostgreSQL sophsticated ranked search with partitions.
-  </p>
-  <p>
-    This demo using <a target="_blank" href="https://github.com/MuseumofModernArt/collection">free artworks database</a> as seed source.
-  </p>
-  <p>
-    <a target="_blank" href="https://github.com/MuseumofModernArt/collection">StimulusReflex</a> for real time based interactions based on Web Sockets and  <a href="https://docs.stimulusreflex.com/quickstart#look-mom-no-javascript">declarative StimulusReflex
-    attributes</a>. <strong>No custom JavaScript was written for this demo.</strong> Based on <a target="_blank" href="https://expo.stimulusreflex.com/demos/tabular"> tabular example</a>
-  </p>
-  <p>
-    Server search based on PostgreSQL ts vector fields, which are formed by trigger actions on model update.
-  </p>
-
-  <p>
-    Just start typing in input box. <strong>What will happen:</strong>
-    <ul>
-      <li>Table will be updated by realtime search of Artworks by `title` and `accession number`</li>
-      <li>In same time dropdown with 5 top results of each related to Artworks models will appear [Artist, Classification, Department]</li>
-      <li>On click on dropdown Item Artworks will be filtered by  [Artist, Classification, Department], or in case or Artwork selection - Selected Artwork will show.</li>
-    </ul>
-  </p>
-
-  <p>
-    <strong>Example:</strong> Type 'Photography', choose department - Artworks in Photography will be shown.
-  </p>
-
-  <p>
-    In browser Dev Tools you can check duration of reflex action from logs.
-  </p>
-
-  <p>
-    [Accession number, Title, Date] are sortable fields, just press on table headers.
-  </p>
-
+  <h2>Realtime search</h2>
+  <p><i><a href="#full_description">Full description is  on the bottom of this page</a></i></p>
 <% end %>
 
 <div id="search-example">
@@ -116,3 +83,44 @@
 </div>
 
 
+<%= render "/globals/explanation" do %>
+  <p id="full_description">
+    Reason of this demo - demonstrations or realtime searching based on PostgreSQL sophsticated ranked search with partitions.
+  </p>
+  <p>
+    This demo using <a target="_blank" href="https://github.com/MuseumofModernArt/collection">free artworks database</a> as seed source.
+  </p>
+  <p>
+    <a target="_blank" href="https://github.com/MuseumofModernArt/collection">StimulusReflex</a> for real time based interactions based on Web Sockets and  <a href="https://docs.stimulusreflex.com/quickstart#look-mom-no-javascript">declarative StimulusReflex
+    attributes</a>. <strong>No custom JavaScript was written for this demo.</strong> Based on <a target="_blank" href="https://expo.stimulusreflex.com/demos/tabular"> tabular example</a>
+  </p>
+  <p>
+    Server search based on PostgreSQL ts vector fields, which are formed by trigger actions on model update.
+  </p>
+
+  <p>
+    Just start typing in input box. <strong>What will happen:</strong>
+  <ul>
+    <li>Table will be updated by realtime search of Artworks by `title` and `accession number`</li>
+    <li>In same time dropdown with 5 top results of each related to Artworks models will appear [Artist, Classification, Department]</li>
+    <li>On click on dropdown Item Artworks will be filtered by  [Artist, Classification, Department], or in case or Artwork selection - Selected Artwork will show.</li>
+  </ul>
+  </p>
+
+  <p>
+    <strong>Example:</strong> Type 'Photography', choose department - Artworks in Photography will be shown.
+  </p>
+
+  <p>
+    In browser Dev Tools you can check duration of reflex action from logs.
+  </p>
+
+  <p>
+    [Accession number, Title, Date] are sortable fields, just press on table headers.
+  </p>
+
+  <p>
+    This demo using small DO droplet (1GB memory) and docker-composer. So keep it in mind:)
+  </p>
+
+<% end %>
