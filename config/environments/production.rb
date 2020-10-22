@@ -6,8 +6,6 @@ Rails.application.configure do
 
   config.hosts << "www.baidan.website"
   config.hosts << "baidan.website"
-  config.hosts << "167.99.138.229"
-  config.hosts << "localhost"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -45,8 +43,8 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   config.action_cable.mount_path = "/cable"
-  config.action_cable.url = 'ws://localhost:3000/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://baidan.website', 'https://baidan.website', 'http://www.baidan.website', 'https://www.baidan.website' ]
+  config.action_cable.url = 'wss://baidan.website/cable'
+  config.action_cable.allowed_request_origins = [ 'http://baidan.website', 'https://baidan.website', 'http://www.baidan.website', 'https://www.baidan.website' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
