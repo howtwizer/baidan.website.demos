@@ -1,5 +1,19 @@
 <%= render "/globals/explanation" do %>
   <h2>Realtime search</h2>
+
+  <p>
+    Just start typing in input box. <strong>What will happen:</strong>
+  <ul>
+    <li>Table will be updated by realtime search of Artworks by `title` and `accession number`</li>
+    <li>In same time dropdown with 5 top results of each related to Artworks models will appear [Artist, Classification, Department]</li>
+    <li>On click on dropdown Item Artworks will be filtered by  [Artist, Classification, Department], or in case or Artwork selection - Selected Artwork will show.</li>
+  </ul>
+  </p>
+
+  <p>
+    <strong>Example:</strong> Type 'Photography', choose department - Artworks in Photography will be shown.
+  </p>
+
   <p><i><a href="#full_description">Full description is  on the bottom of this page</a></i></p>
 <% end %>
 
@@ -98,18 +112,6 @@
     Server search based on PostgreSQL ts vector fields, which are formed by trigger actions on model update.
   </p>
 
-  <p>
-    Just start typing in input box. <strong>What will happen:</strong>
-  <ul>
-    <li>Table will be updated by realtime search of Artworks by `title` and `accession number`</li>
-    <li>In same time dropdown with 5 top results of each related to Artworks models will appear [Artist, Classification, Department]</li>
-    <li>On click on dropdown Item Artworks will be filtered by  [Artist, Classification, Department], or in case or Artwork selection - Selected Artwork will show.</li>
-  </ul>
-  </p>
-
-  <p>
-    <strong>Example:</strong> Type 'Photography', choose department - Artworks in Photography will be shown.
-  </p>
 
   <p>
     In browser Dev Tools you can check duration of reflex action from logs.
