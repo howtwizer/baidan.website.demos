@@ -1,6 +1,15 @@
-# art search
+# About
+
+This repository  contains examples of code (like algorithms and tasks), and small demo projects.
+
+# Code examples
+- Algorithms (lib/algorithms)
+- Small Tasks (lib/interview_tasks)
+
+# Demo projects
+## art search
 [DEMO](https://baidan.website/artworks)
-## Interesting tech features in this project.
+### Interesting tech features in this project.
 - PostgreSQL tsvector live search
 - PostgreSQL triggers
 - Multi models top ranked suggestor
