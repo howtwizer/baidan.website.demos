@@ -39,7 +39,7 @@ module InterviewTasks
       previous = nil
       # Starting from head
       current = list.head
-      # In list reverse we are not changing postion of elemetns,
+      # In list reverse we are not changing position of elements,
       # we changing linked next nodes!
       while current != nil
         temp = current.next
